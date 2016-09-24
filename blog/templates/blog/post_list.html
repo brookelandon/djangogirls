@@ -4,11 +4,21 @@
   </head>
   <body>
     <div>
-        <h1><a href="">Wayward P's Baby Python Blog</a></h1>
+        <h1><a href="http://waywardp.pythonanywhere.com/">Wayward P's Baby Python Blog</a></h1>
     </div>
 
     <div>
-    <p>I love you Christopher!</p>
-    <p>My website works!</p>
+      <p>I love you Christopher!</p>
+      <p>My website works!</p>
+    </div>
+
+{% for post in posts %}
+    <div>
+      <p>published: {{ post.published_date}}</p>
+      <h1><a href="">{{post.title}}</a></h1>
+      <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
   </body>
 </html>
